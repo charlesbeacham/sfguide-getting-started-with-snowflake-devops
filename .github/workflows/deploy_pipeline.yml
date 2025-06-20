@@ -30,6 +30,7 @@ jobs:
       # Write private key secret as file
       - name: Configure Private Key
         run: |
+          mkdir -p .snowflake
           echo "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > .snowflake/snowflake_rsa_key
 
       # Install Snowflake CLI GitHub Action and point to config file
